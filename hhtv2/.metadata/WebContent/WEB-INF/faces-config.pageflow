@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14382814795760" configfile="/hhtv2/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Registration.xhtml" x="70" y="148" id="pf14382827672301" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf14382827672302 pf14382829139094" inlinks="pf14382829139094" path="/Registration.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="RegConfirmation.xhtml" x="351" y="172" id="pf14382827672313" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14382827672302" path="/RegConfirmation.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Login.xhtml" x="82" y="259" id="pf14386310268740" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14386310268742 pf14387841289741" inlinks="pf14386310268742" path="/Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="guest/hhtinput.xhtml" x="362" y="291" id="pf14388830429690" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf14388840031151 pf14388840031152" inlinks="pf14387841289741 pf14388840031152" path="/guest/hhtinput.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="guest/hhtresult.xhtml" x="584" y="321" id="pf14388840031153" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14388840031151" path="/guest/hhtresult.xhtml"/>
+  <links id="pf14382827672302" target="pf14382827672313" source="pf14382827672301" outcome="success"/>
+  <links id="pf14382829139094" target="pf14382827672301" source="pf14382827672301" outcome="failure">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14386310268742" target="pf14386310268740" source="pf14386310268740" outcome="failure">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14387841289741" target="pf14388830429690" source="pf14386310268740" outcome="success" redirect="true"/>
+  <links id="pf14388840031151" target="pf14388840031153" source="pf14388830429690" outcome="success"/>
+  <links id="pf14388840031152" target="pf14388830429690" source="pf14388830429690" outcome="failure">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>
