@@ -4,29 +4,30 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core">
- 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
 <head>
-	<link rel="stylesheet" type="text/css" href="main.css"/>
+<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 
 <h:body styleClass="body">
-<ui:composition template="/template/commonLayout.xhtml">
-	<ui:define name="content">
-		<h:form>
-			<h:outputText value="Exception" styleClass="header"></h:outputText>
-			<h:messages errorClass="errorMessage" infoClass="infoMessage" warnClass="warnMessage"></h:messages>
-			<h:panelGrid columns="2">
-				<h:outputText value="Error: "></h:outputText>
-				<h:outputText value="#{exceptionHandlingBean.errorCode}"></h:outputText>
-				
-				<h:outputText value="Request URI: "></h:outputText>
-				<h:outputText value="#{exceptionHandlingBean.requestUri}"></h:outputText>						
-							
-			</h:panelGrid>
-		</h:form>
-	</ui:define>
-</ui:composition>	
+	<ui:composition template="/template/commonLayout.xhtml">
+		<ui:define name="content">
+			<h:form>
+				<h:outputText value="Exception" styleClass="header"></h:outputText>
+				<h:messages errorClass="errorMessage" infoClass="infoMessage"
+					warnClass="warnMessage"></h:messages>
+				<h:panelGrid columns="2">
+					<h:outputText value="Error: "></h:outputText>
+					<h:outputText value="#{exceptionHandlingBean.errorCode}"></h:outputText>
+
+					<h:outputText value="Request URI: "></h:outputText>
+					<h:outputText value="#{exceptionHandlingBean.requestUri}"></h:outputText>
+
+				</h:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>
 </h:body>
 </html>
