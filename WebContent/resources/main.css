@@ -1,0 +1,55 @@
+@CHARSET "ISO-8859-1";
+
+.body {
+	font-family: verdana;
+}
+
+.errorMessage {
+	color: red;
+}
+
+.infoMessage {
+	color: blue;
+}
+
+.warnMessage {
+	color: orange;
+}
+
+.header {
+	font-size: 32px;
+}
+
+#header, #navigation, #content, #footer {
+	margin: 0 1.5% 24 1.5%;
+	padding: 24px 15px;
+}
+
+#header {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+#navigation {
+	line-height: 30px;
+	background-color: #333333; //# eeeeee; //
+	height: 300px;
+	width: 20%; //
+	width: 100px;
+	float: left;
+	height: 100%;
+}
+
+#content {
+	width: 73%;
+	float: right;
+	height: 100%;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+}
