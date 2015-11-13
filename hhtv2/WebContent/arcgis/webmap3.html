@@ -88,10 +88,10 @@
 			myFunctions.addLayer = function(layerId, layerUrl){				
 				var layer = new ArcGISDynamicMapServiceLayer(layerUrl, {id:layerId});
 				map.addLayer(layer);				
-			}
+			};
 			myFunctions.removeLayer = function(layerId){
 				map.removeLayer(map.getLayer(layerId));
-			}
+			};
 			myFunctions.setLayerVisibility = function(layer) {  				
 		        (layer.visible) ? layer.hide() : layer.show();  
 		    };
@@ -254,7 +254,7 @@
 		</div>
 		<div id="mapDiv" class="centerPanel"
 			data-dojo-type="dijit/layout/ContentPane"
-			data-dojo-props="region: 'center'">Sidebar content (left)</div>
+			data-dojo-props="region: 'center'"></div>
 	</div>
 
 
