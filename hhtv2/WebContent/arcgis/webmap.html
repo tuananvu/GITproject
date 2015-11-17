@@ -102,11 +102,11 @@
 				
 			arcgisUtils.createMap(webmapId, "mapDiv").then(function(response){
 				map = response.map;
-				var legend = new Legend({
-					map: map,
-					layerInfos: (arcgisUtils.getLegendLayers(response))
-				}, "legendDiv");
-				legend.startup();
+				//var legend = new Legend({
+				//	map: map,
+				//	layerInfos: (arcgisUtils.getLegendLayers(response))
+				//}, "legendDiv");
+				//legend.startup();
 			});
 		});
 		
