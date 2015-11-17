@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>hhtv2</display-name>
+	<welcome-file-list>
+		<welcome-file>/faces/index.xhtml</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+			<max-file-size>5000000</max-file-size>
+			<max-request-size>5000000</max-request-size>
+			<file-size-threshold>1000000</file-size-threshold>
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<!-- Missing login -->
+		<error-code>401</error-code>
+		<location>/faces/ExceptionHandler.xhtml</location>
+	</error-page>
+	<error-page>
+		<!-- Forbidden directory listing -->
+		<error-code>403</error-code>
+		<location>/faces/ExceptionHandler.xhtml</location>
+	</error-page>
+	<error-page>
+		<!-- Missing resource -->
+		<error-code>404</error-code>
+		<location>/faces/ExceptionHandler.xhtml</location>
+	</error-page>
+	<error-page>
+		<!-- Uncaught exception -->
+		<error-code>500</error-code>
+		<location>/faces/ExceptionHandler.xhtml</location>
+	</error-page>
+	<error-page>
+		<!-- Unsupported servlet method -->
+		<error-code>503</error-code>
+		<location>/faces/ExceptionHandler.xhtml</location>
+	</error-page>
+	<error-page>
+		<location>/faces/ExceptionHandler.xhtml</location>
+	</error-page>
+	<!-- <servlet-mapping> <servlet-name>ImageServlet</servlet-name> <url-pattern>/images/*</url-pattern> 
+		</servlet-mapping> -->
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>pages_auth</web-resource-name>
+			<url-pattern>/faces/guest/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Administrator</role-name>
+			<role-name>Manager</role-name>
+			<role-name>Guest</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>pages_auth</web-resource-name>
+			<url-pattern>/faces/arcgis/*</url-pattern>
+		</web-resource-collection>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>example-jaas-realm</realm-name>
+		<form-login-config>
+			<form-login-page>/faces/Login.xhtml</form-login-page>
+			<form-error-page>/faces/Login.xhtml</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<security-role>
+		<role-name>Administrator</role-name>
+	</security-role>
+	<security-role>
+		<role-name>Manager</role-name>
+	</security-role>
+	<security-role>
+		<role-name>Guest</role-name>
+	</security-role>
+</web-app>
