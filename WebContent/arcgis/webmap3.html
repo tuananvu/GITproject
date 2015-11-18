@@ -91,7 +91,7 @@
 					infoWindow: popup			
 				});	
 				obs_insitu_collective_layer = new ArcGISDynamicMapServiceLayer("http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/obs_meteocean_insitu_sfc_time/MapServer");
-				obs_situ_geolink_met_layer = new FeatureLayer("http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/obs_meteoceanhydro_insitu_pts_geolinks/MapServer/3");
+				obs_situ_geolink_met_layer = new FeatureLayer("http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/obs_meteoceanhydro_insitu_pts_geolinks/MapServer/2", {mode: FeatureLayer.MODE_AUTO,outFields:["*"], infoTemplate: new InfoTemplate("Attributes", "${*}")});
 				obs_situ_geolink_oc_layer = new FeatureLayer("http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/obs_meteoceanhydro_insitu_pts_geolinks/MapServer/6");
 				obs_situ_geolink_riv_layer = new FeatureLayer("http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/obs_meteoceanhydro_insitu_pts_geolinks/MapServer/9");
 				obs_situ_geolink_wq_layer = new FeatureLayer("http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/obs_meteoceanhydro_insitu_pts_geolinks/MapServer/12");
@@ -321,7 +321,7 @@
 					<button id="testBtn">Test Button</button>
 				</div>
 				<div data-dojo-type="dijit/TitlePane"
-					data-dojo-props="title: 'Pane #3', href:'layout/button.html'">bbbb
+					data-dojo-props="title: 'Pane #3', href:'layout/button.html'">blank content
 				</div>
 			</div>
 		</div>
