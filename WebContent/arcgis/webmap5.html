@@ -24,7 +24,7 @@
 	right: 20px;
 }
 </style>
-<title>Insert title here</title>
+<title>Webmap 5</title>
 </head>
 <body class="claro">
 	<script>
@@ -37,54 +37,21 @@
 	</script>
 	<script src="http://js.arcgis.com/3.14compact/" data-dojo-config="isDebug: 1, async: 1"></script>
 	<!--<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>-->
-	<script>
-		// load our custom/Hello module and wait for the DOM to be ready
-		require([ "my/Hello", "dojo/domReady!" ], function(Hello){
-			// create our custom dialog
-			var w = new Hello({
-				id: "hello",
-				content: "Hello World!"
-	
-			// place it in the DOM
-			}).placeAt(document.body);
-	
-			// show it
-			w.show();
-		});
-	</script>
-	
 	<script>		
+	
 		require([
-			"my/counter"
-		], function(counter) {
-			log(counter.getValue());
-			counter.increment();
-			log(counter.getValue());
-			log(counter.getValue());
-			counter.decrement();
-			log(counter.getValue());
-		
-			// Define the "log" function to display console-like messages directly on the page
-			function log(msg){
-				var c = document.getElementById("console");
-				if(!c){
-					c = document.createElement("div");
-					c.id = "console";
-					document.body.appendChild(c);
-				}
-				c.innerHTML += "<div>" + msg + "</div>";
-			}
+			"dojo/parser", "my/toggleButton2"
+		], function(parser){
+			parser.parse();
 		});
-	</script>
-	
-	
+	</script>		
 	<script type="text/javascript">
 	var mapLayers = [];
 	var map;
-	//var obs_insitu_collective_layer, obs_situ_geolink_met_layer1, obs_situ_geolink_oc_layer, obs_situ_geolink_riv_layer, 
-		//obs_situ_geolink_wq_layer, obs_situ_geolink_aq_layer, obs_situ_geolink_radiosonde_layer, oilAndGasLayer ;
+	var obs_insitu_collective_layer, obs_situ_geolink_met_layer1, obs_situ_geolink_oc_layer, obs_situ_geolink_riv_layer, 
+		obs_situ_geolink_wq_layer, obs_situ_geolink_aq_layer, obs_situ_geolink_radiosonde_layer, oilAndGasLayer ;
 	require([ 
-		"my/initMap",
+		"my/initMap2",
 		"dojo/dom-construct", 
 		"esri/dijit/Popup", 
 		"esri/InfoTemplate",
@@ -99,7 +66,7 @@
 		"esri/layers/FeatureLayer", 
 		"dojo/domReady!"], 
 		function(
-		initMap,
+		initMap2,
 		domConstruct, 
 		Popup, 
 		InfoTemplate, 
@@ -123,8 +90,8 @@
 
 		    //esri.hide(dijit.byId("obs_pane"));
 			myFunctions.init = function(){				
-				initMap.init();
-				map = initMap.getMap();
+				initMap2.init();
+				map = initMap2.getMap();
 								
 				esri.hide(dojo.byId("obs_pane"));
 				esri.hide(dojo.byId("cyclone_pane"));
@@ -174,20 +141,7 @@
 		}
 	);	
 	</script>	
-	<script>
-		_global_var = 10;
-		require([
-			"dojo/parser", "my/SomeWidget", "my/toggleButton"
-		], function(parser){
-			parser.parse();
-		});
-	</script>
-	<div data-dojo-type="my/SomeWidget" data-dojo-props="title:'Our some widget'">
-		<div>Don't forget to click on the title</div>
-		<p>This is arbitrary content</p>
-		<p>More arbitrary content</p>
-	</div>
-	
+		
 	
 	<div id="appLayout" class="demoLayout" data-dojo-type="dijit/layout/BorderContainer"
 		data-dojo-props="design: 'headline'">
@@ -201,8 +155,8 @@
 				<div style="border: solid black 1px;">
 					<div data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Observation'">
 						<div data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'In-situ'">
-							<div data-dojo-type="my/toggleButton" data-dojo-props="title:'Surface Weather/Ocean Condition', 
-								layer:obs_insitu_collective_layer
+							<div data-dojo-type="my/toggleButton2" data-dojo-props="title:'Surface Weather/Ocean Condition' 
+								
 							">
 							</div>
 							<br />

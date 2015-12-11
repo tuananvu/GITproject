@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Dojo Stopwatch</title>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css" />
+
+        <script type="text/javascript">
+            dojoConfig = {
+                parseOnLoad : true,
+                async: true,
+                packages: [{
+                        name: 'app',
+                        location: location.pathname.replace(/\/[^/]+$/, '') + '/../dojo_app'
+                }]
+            };
+        </script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"></script>
+    </head>
+    <body class="claro">
+        <input data-dojo-type="app/components/Stopwatch" />
+        <input data-dojo-type="app/components/Stopwatch" data-dojo-props="updateRate: 1" />
+
+        <script type="text/javascript" src="application.js"></script>
+    </body>
+</html>

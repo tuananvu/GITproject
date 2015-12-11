@@ -16,7 +16,11 @@ define([
     	templateString: template,
         //some properties
     	baseClass: "dijitToggleButton",
-    	title:"", //we'll set this from the widget def    	    	
+    	title:"", //we'll set this from the widget def 
+    	
+    	name: "unknown",
+    	map:map,
+    	
     	layer: new esri.layers.ArcGISDynamicMapServiceLayer("http://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/obs_meteocean_insitu_sfc_time/MapServer"),
     	
     	legenPane:"",    	
@@ -26,9 +30,17 @@ define([
     		this._onChange();
     	},   	
     	//private method _onChange
-    	_onChange: function(){
-    		this.layer.show();
-    		this.toggleBtn.set("label", " changed");	   
+    	_onChange: function(checked){
+    		if(!this.checked){
+    			map.addLayer(this.layer);
+    		//this.layer.show();
+    		//this.toggleBtn.set("label", " changed");	  
+    		}else{
+    			map.removeLayer(this.layer);
+    		}
+    		
+    		
+    		
     	},
     	
     	//the last change to set up before widget fully serve in web page
